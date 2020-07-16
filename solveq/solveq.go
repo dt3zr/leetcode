@@ -21,8 +21,8 @@ func solveEquation(equation string) string {
 	s := 0
 	state := StateStart
 	op := PlusOp
-	xstack := make([]int, 0, 8)
-	kstack := make([]int, 0, 8)
+	xsum := 0
+	ksum := 0
 
 	for i < len(eq) {
 		switch eq[i] {
@@ -32,13 +32,13 @@ func solveEquation(equation string) string {
 				if op == MinusOp {
 					xval = -xval
 				}
-				xstack = append(xstack, xval)
+				xsum += xval
 			} else if state == StateStart {
 				xval := 1
 				if op == MinusOp {
 					xval = -xval
 				}
-				xstack = append(xstack, xval)
+				xsum += xval
 			}
 			i++
 			s = i
@@ -49,7 +49,8 @@ func solveEquation(equation string) string {
 				if op == MinusOp {
 					kval = -kval
 				}
-				kstack = append(kstack, kval)
+				//kstack = append(kstack, kval)
+				ksum += kval
 			}
 			switch eq[i] {
 			case '+':
@@ -57,18 +58,8 @@ func solveEquation(equation string) string {
 			case '-':
 				op = MinusOp
 			case '=', '\n':
-				xsum := 0
-				for _, x := range xstack {
-					xsum += x
-				}
-				xstack = xstack[:0]
-				xstack = append(xstack, -xsum)
-				ksum := 0
-				for _, k := range kstack {
-					ksum += k
-				}
-				kstack = kstack[:0]
-				kstack = append(kstack, -ksum)
+				xsum = -xsum
+				ksum = -ksum
 				op = PlusOp
 			}
 
@@ -84,8 +75,8 @@ func solveEquation(equation string) string {
 		}
 	}
 
-	k := kstack[0]
-	x := xstack[0]
+	k := ksum
+	x := xsum
 	if x == 0 {
 		if k == x {
 			return "Infinite solutions"
