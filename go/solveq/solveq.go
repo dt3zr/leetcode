@@ -49,7 +49,6 @@ func solveEquation(equation string) string {
 				if op == MinusOp {
 					kval = -kval
 				}
-				//kstack = append(kstack, kval)
 				ksum += kval
 			}
 			switch eq[i] {
