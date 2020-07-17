@@ -4,7 +4,7 @@ TESTRUNNER=$(PROJECT)_testrunner.o
 INCLUDEDIR=../include/common
 CATCH=$(INCLUDEDIR)/catch.hpp
 
-$(TESTBIN): $(TESTRUNNER) $(TESTBIN).cpp
+$(TESTBIN): $(TESTRUNNER) $(TESTBIN).cpp $(PROJECT).hpp
 	g++ -I../include -Wall -o $@ $< $@.cpp
 
 $(CATCH): $(INCLUDEDIR)
