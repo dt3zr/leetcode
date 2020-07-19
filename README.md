@@ -31,7 +31,7 @@ make clean
 ```
 
 ## Building Go Solutions
-Like the C++ solutions, each Go subdirectory contains the code solution. However, to run build and run the test
+Like the C++ solutions, each Go subdirectory contains the code solution. However, to build and run the test
 we only need to run the go CLI in the solution directory.
 
 To build and run the test for **solveq**, run
