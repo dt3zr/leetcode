@@ -1,4 +1,4 @@
-package revstr
+package revwords
 
 func reverseWords(s string) string {
 	// skipping all leading whitespace

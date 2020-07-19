@@ -1,4 +1,4 @@
-package revstr
+package revwords
 
 import "testing"
 
