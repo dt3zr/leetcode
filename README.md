@@ -50,4 +50,4 @@ go test -bench . -benchmem
 **sametree** is the code solution for the [Same Tree](https://leetcode.com/problems/same-tree) problem on Leetcode and **solveq**
 is for [Solve the Equation](https://leetcode.com/problems/solve-the-equation). I use short directory names for all the code
 solutions and it's especially needed for Go because these directories are the Go packages. The mappings for these directories
-to their Leetcode problems can be found in the Wiki area of the repository.
+to their Leetcode problems can be found in the [Wiki](https://github.com/dt3zr/leetcode/wiki) area of the repository.
