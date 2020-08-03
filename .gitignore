@@ -1,1 +1,6 @@
-cpp/include
+cpp/include/
+.idea/
+gradle/
+gradlew
+gradlew.bat
+/java/*/.gitignore
